@@ -12,12 +12,131 @@ body {
 
 .namespaces {
     background-color: #373a36;
+    z-index: 10;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 100ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.namespaces .filler {
+    width: 50px;
+    height: 50px;
+    background-color: #e6e2dd;
+    margin: 15px 0;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.namespaces .filler:hover {
+    background-color: white;
+}
+
+.namespaces:hover {
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3)
 }
 
 .rooms {
     background-color: #D48166;
+    z-index: 5;
+    border-right: 1px solid #904a33;
+    padding: 15px;
 }
 
 .chat-panel {
     background-color: #e6e2dd;
+    padding: 15px;
+}
+
+#user-message {
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 6px;
+    padding: 18px;
+    font-size: 18px;
+    color: white;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    line-height: 40px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    caret-color: #D48166;
+}
+
+.searchbar {
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 300ms linear;
+}
+
+.searchbar:hover > .search_input {
+    width: 200px;
+    caret-color: #D48166;
+    transition: width 300ms linear;
+}
+
+.searchbar:focus-within > .search_input {
+    width: 200px;
+}
+
+.searchbar:hover > .search_icon {
+    background: white;
+    color: #D48166;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none !important;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #3B4048;
+    max-height: 85%;
+    overflow-y: scroll;
+}
+
+#messages li .user-message {
+    margin-left: 10px;
+    color: #222;
+}
+
+#messages li .user-name-time span {
+    color: #ABB2BF;
+}
+
+#messages li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: stretch;
+}
+
+small {
+    display: block;
+    width: 215px;
+    text-align: center;
 }
