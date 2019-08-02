@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat App</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 col-sm-1 namespaces">
+                L
+            </div>
+            <div class="col-12 col-sm-2 rooms">
+                M
+            </div>
+            <div class="col-12 col-sm-9 chat-panel">
+                R
+            </div>
+        </div>
+    </div>
+
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="scripts.js"></script>
+<script src="joinNamespace.js"></script>
+<script src="joinRoom.js"></script>
 </html>

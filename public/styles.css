@@ -1,0 +1,23 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: inherit;
+}
+
+.namespaces {
+    background-color: #373a36;
+}
+
+.rooms {
+    background-color: #D48166;
+}
+
+.chat-panel {
+    background-color: #e6e2dd;
+}
