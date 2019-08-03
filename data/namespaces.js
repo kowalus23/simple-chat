@@ -1,28 +1,28 @@
-// Bring in the room class
 const Namespace =  require('../classes/Namespace');
 const Room =  require('../classes/Room');
 
-// Set up the namespaces
 let namespaces = [];
-let wikiNs = new Namespace(0,'Wiki','https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png','/wiki');
-let mozNs = new Namespace(1,'Mozilla','https://www.mozilla.org/media/img/logos/firefox/logo-quantum.9c5e96634f92.png','/mozilla');
-let linuxNs = new Namespace(2,'Linux','https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png','/linux');
+let mmoNs = new Namespace(0,'MMO', '/mmo');
+let techNs = new Namespace(1,'Technology','/technology');
+let frontNs = new Namespace(2,'Front-End','/front-end');
 
-// Make the main room and add it to rooms. it will ALWAYS be 0
-wikiNs.addRoom(new Room(0,'New Articles','Wiki'));
-wikiNs.addRoom(new Room(1,'Editors','Wiki', true));
-wikiNs.addRoom(new Room(2,'Other','Wiki'));
+mmoNs.addRoom(new Room(0,'World of Warcraft','MMO'));
+mmoNs.addRoom(new Room(1,'Black Desert','MMO', true)); // true means private
+mmoNs.addRoom(new Room(2,'Tibia','MMO'));
+mmoNs.addRoom(new Room(3,'Guild Wars 2','MMO'));
 
-mozNs.addRoom(new Room(0,'Firefox','Mozilla'));
-mozNs.addRoom(new Room(1,'SeaMonkey','Mozilla'));
-mozNs.addRoom(new Room(2,'SpiderMonkey','Mozilla'));
-mozNs.addRoom(new Room(3,'Rust','Mozilla'));
+techNs.addRoom(new Room(0,'Mobile','Technology'));
+techNs.addRoom(new Room(1,'PC','Technology'));
+techNs.addRoom(new Room(2,'Smart Home','Technology'));
+techNs.addRoom(new Room(3,'VR','Technology', true));
 
-linuxNs.addRoom(new Room(0,'Debian','Linux'));
-linuxNs.addRoom(new Room(1,'Red Hat','Linux'));
-linuxNs.addRoom(new Room(2,'MacOs','Linux'));
-linuxNs.addRoom(new Room(3,'Kernal Development','Linux'));
+frontNs.addRoom(new Room(0,'React','Front-End'));
+frontNs.addRoom(new Room(1,'Vue','Front-End', true));
+frontNs.addRoom(new Room(2,'Styles/Animations','Front-End'));
+frontNs.addRoom(new Room(3,'Node.js','Front-End'));
+frontNs.addRoom(new Room(4,'WebSockets','Front-End'));
+frontNs.addRoom(new Room(5,'API','Front-End'));
 
-namespaces.push(wikiNs, mozNs, linuxNs);
+namespaces.push(mmoNs, techNs, frontNs);
 
-module.exports = namespaces
+module.exports = namespaces;

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chat App</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
@@ -13,16 +14,16 @@
 </head>
 <body>
 <div class="container-fluid h-100">
-    <div class="row h-100">
-        <div class="col-12 col-sm-1 namespaces h-100">
+    <div class="row h-100 unique">
+        <div class="col-12 col-xl-1 col-sm-2 col-xs-12 namespaces h-100">
 
         </div>
-        <div class="col-12 col-sm-2 rooms h-100">
+        <div class="col-12 col-xl-2 col-sm-3 col-xs-12 rooms h-100">
             <h3>Room List</h3>
             <ul class="room-list">
             </ul>
         </div>
-        <div class="col-12 col-sm-9 chat-panel h-100">
+        <div class="col-12 col-xl-9 col-sm-7 col-xs-12 chat-panel h-100">
             <div class="row p-0 m-0 h-100 overflow-h">
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="d-flex justify-content-between">
@@ -40,7 +41,7 @@
                     </ul>
                     <div class="message-form">
                         <form id="user-input">
-                            <span class="replace-span">Writing as ....</span>
+                            <p class="replace-span">Writing as <span class="font-w-700">(Enter message to update)</span></p>
                             <input id="user-message" type="text" placeholder="Enter your message"/>
                         </form>
                     </div>

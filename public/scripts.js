@@ -9,8 +9,13 @@ let nsSocket = "";
 
 socket.on('nsList', (nsData) => {
   let namespacesDiv = document.querySelector('.namespaces');
-  nsData.forEach(({endpoint, title}) => {
-    namespacesDiv.innerHTML += `<div class="namespace" ns=${endpoint}>${title}</div>`
+  nsData.forEach(({endpoint, title, shortTitle}) => {
+    namespacesDiv.innerHTML += `
+<div class="namespace-wrapper">
+    <small class="namespace-title">${title}</small>
+    <div class="namespace" ns=${endpoint}>${shortTitle}</div>
+</div>
+`
   });
 
   Array.from(document.getElementsByClassName('namespace')).forEach((el) => {
@@ -19,5 +24,5 @@ socket.on('nsList', (nsData) => {
       joinNS(nsEndpoint)
     })
   });
-  joinNS('/wiki');
+  joinNS('/mmo');
 });

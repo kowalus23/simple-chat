@@ -10,11 +10,11 @@ const joinNS = (endpoint) => {
     nsRooms.forEach(({roomTitle, privateRoom}) => {
       let glyph;
       if (privateRoom) {
-        glyph = 'lock'
+        glyph = `<i class="fas fa-lock"></i>`
       } else {
-        glyph = 'globe'
+        glyph = ''
       }
-      roomList.innerHTML += `<li class="room"><span class="glyphicon glyphicon-${glyph}"></span>${roomTitle}</li>`
+      roomList.innerHTML += `<li class="room">${roomTitle}<span>${glyph}</span></li>`
     });
     let roomNodes = document.getElementsByClassName('room');
     Array.from(roomNodes).forEach((el) => {
@@ -29,6 +29,7 @@ const joinNS = (endpoint) => {
 
   nsSocket.on('messageToClients', (msg) => {
     const newMsg = buildHTML(msg);
+    document.querySelector('.font-w-700').innerHTML = msg.username;
     document.querySelector('#messages').innerHTML += newMsg;
   });
   document.querySelector('.message-form').addEventListener('submit', formSubmission)
