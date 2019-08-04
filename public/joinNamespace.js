@@ -3,7 +3,7 @@ const joinNS = (endpoint) => {
     nsSocket.close();
     document.querySelector('#user-input').removeEventListener('submit', formSubmission)
   }
-  nsSocket = io(`ws://fast-island-63405.herokuapp.com${endpoint}`);
+  nsSocket = io(`http://localhost:3009${endpoint}`);
   nsSocket.on('nsRoomLoad', (nsRooms) => {
     let roomList = document.querySelector('.room-list');
     roomList.innerHTML = "";

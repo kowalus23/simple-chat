@@ -1,14 +1,5 @@
 const username = prompt(`What's your username?`);
-
-const HOST = `ws://fast-island-63405.herokuapp.com`;
-const ws = new WebSocket(HOST);
-const el = document.getElementById('server-time');
-ws.onmessage = function (event) {
-  el.innerHTML = 'Server time: ' + event.data;
-};
-
-
-const socket = io(HOST, {
+const socket = io('http://localhost:3009', {
   query: {
     username: username,
   }
