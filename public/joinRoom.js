@@ -23,9 +23,14 @@ const joinRoom = (roomName) => {
 
   let searchBox = document.querySelector('#search-box');
   searchBox.addEventListener('input', (e) => {
-    let messages = Array.from(document.getElementsByClassName('message-wrapper'));
-    messages.forEach((msg) => {
-      console.log(msg)
+    let messageWrapper = Array.from(document.getElementsByClassName('message-wrapper'));
+    messageWrapper.forEach((msg) => {
+      let messageText = Array.from(msg.getElementsByClassName('message-text'));
+      if (messageText[0].innerText.toLowerCase().indexOf(e.target.value.toLowerCase()) === -1) {
+        msg.style.display = "none";
+      } else {
+        msg.style.display = "flex";
+      }
     })
   })
 };
