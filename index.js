@@ -1,12 +1,12 @@
 const express = require('express');
-const socketio = require('socket.io');
+const socketIO = require('socket.io');
 let namespaces = require('./data/namespaces');
 
 const app = express();
 
 app.use(express.static(__dirname + '/public'));
 const expressServer = app.listen(3001);
-const io = socketio(expressServer);
+const io = socketIO(expressServer);
 
 io.on('connection', (socket) => {
   let nsData = namespaces.map(ns => {
@@ -16,7 +16,8 @@ io.on('connection', (socket) => {
       endpoint: ns.endpoint
     }
   });
-  socket.emit('nsList', nsData)
+  socket.emit('nsList', nsData);
+  socket.on('disconnect', () => console.log(`Client disconnected`));
 });
 
 namespaces.forEach((namespace) => {
