@@ -1,15 +1,11 @@
 const express = require('express');
-const app = express();
 const socketio = require('socket.io');
-
 let namespaces = require('./data/namespaces');
 
-const PORT = process.env.PORT;
-const expressServer = app.listen(PORT || 3009, () => {
-  console.log(`app is running on port ${PORT}`);
-});
+const app = express();
 
 app.use(express.static(__dirname + '/public'));
+const expressServer = app.listen(3001);
 const io = socketio(expressServer);
 
 io.on('connection', (socket) => {
