@@ -1,5 +1,5 @@
 const username = prompt(`What's your username?`);
-const socket = io('http://localhost:9000', {
+const socket = io('http://localhost:3009', {
   query: {
     username: username,
   }

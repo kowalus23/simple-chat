@@ -3,7 +3,7 @@ const joinNS = (endpoint) => {
     nsSocket.close();
     document.querySelector('#user-input').removeEventListener('submit', formSubmission)
   }
-  nsSocket = io(`http://localhost:9000${endpoint}`);
+  nsSocket = io(`http://localhost:3009${endpoint}`);
   nsSocket.on('nsRoomLoad', (nsRooms) => {
     let roomList = document.querySelector('.room-list');
     roomList.innerHTML = "";
@@ -44,7 +44,7 @@ const formSubmission = (event) => {
 const buildHTML = ({text, time, username, avatar}) => {
   const convertedDate = new Date(time).toLocaleString();
   const newHTML = `
-  <li>
+  <li class="message-wrapper">
      <div class="user-image">
        <img src=${avatar}/>
      </div>
