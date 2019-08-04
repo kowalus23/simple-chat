@@ -1,6 +1,5 @@
 const username = prompt(`What's your username?`);
-const PORT = process.env.PORT;
-const socket = io(`fast-island-63405:${PORT}`, {
+const socket = io('http://localhost:3009', {
   query: {
     username: username,
   }
