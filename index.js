@@ -32,7 +32,8 @@ namespaces.forEach((namespace) => {
       updateUsersInRoom(namespace, roomToLeave);
       nsSocket.join(roomToJoin);
       io.of(namespace.endpoint).in(roomToJoin).clients((error, clients) => {
-        numberOfUsersCallback(clients.length);
+        numberOfUsersCallback(clients);
+        console.log(clients)
       });
 
       const nsRoom = namespace.rooms.find(({roomTitle}) => {

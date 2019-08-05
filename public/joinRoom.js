@@ -1,6 +1,6 @@
 const joinRoom = (roomName) => {
   nsSocket.emit('joinRoom', (roomName), (newNumberOfMembers) => {
-    document.querySelector('.users-number').innerHTML = `${newNumberOfMembers} users in the channel`
+    document.querySelector('.users-number').innerHTML = `${newNumberOfMembers.length} users in the channel`
   });
 
   nsSocket.on('historyCatchUp', (history) => {
